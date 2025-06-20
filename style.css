@@ -1,6 +1,31 @@
+:root {
+    --font-main: "Rubik", sans-serif;
+
+    /* ألوان الخلفية */
+    --bg-body: #f9f9f9;
+    --bg-box: #fff;
+    --bg-subject: #f8f9fa;
+
+    /* ألوان الحدود */
+    --border-subject: #dee2e6;
+
+    /* ألوان النتائج */
+    --color-excellent: #28a745;
+    --color-very-good: #20c997;
+    --color-good: #0d6efd;
+    --color-pass: #fd7e14;
+    --color-fail: #dc3545;
+
+    /* الفوتر */
+    --footer-bg: #000;
+    --footer-text: #fff;
+    --footer-link: #A9A9A9;
+    --footer-link-hover: #fff;
+}
+
 body {
-    font-family: "Rubik", sans-serif;
-    background: #f9f9f9;
+    font-family: var(--font-main);
+    background: var(--bg-body);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,16 +35,16 @@ body {
 .calculator-box {
     max-width: 800px;
     margin: auto;
-    background: white;
+    background: var(--bg-box);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .subject {
-    background: #f8f9fa;
+    background: var(--bg-subject);
     padding: 15px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--border-subject);
     border-radius: 8px;
 }
 
@@ -42,32 +67,47 @@ input::placeholder {
 }
 
 .excellent {
-    background-color: #28a745;
+    background-color: var(--color-excellent);
     color: white;
 }
 
 .very-good {
-    background-color: #20c997;
+    background-color: var(--color-very-good);
     color: white;
 }
 
 .good {
-    background-color: #0d6efd;
+    background-color: var(--color-good);
     color: white;
 }
 
 .pass {
-    background-color: #fd7e14;
+    background-color: var(--color-pass);
     color: white;
 }
 
 .fail {
-    background-color: #dc3545;
+    background-color: var(--color-fail);
     color: white;
 }
 
 footer {
-    background: #000;
-    color: #fff;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     text-align: center;
+}
+
+.footer i {
+    font-size: 24px;
+    padding: 5px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--footer-link);
+    transition: color 0.2s ease-in-out;
+}
+
+.footer a:hover {
+    color: var(--footer-link-hover);
 }

@@ -9,16 +9,32 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5NES3SR2R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-G5NES3SR2R');
+    </script>
+
 </head>
 
 <body>
-    <div class="container py-5">
+    <div class="d-flex justify-content-center my-4">
+        <img src="brave.png" alt="logo" width="100px">
+    </div>
+
+    <div class="container py-5 pt-0">
         <div class="calculator-box">
             <h2 class="text-center mb-4">حاسبة التقدير - كلية تجارة جامعة المنصورة</h2>
 
-      <div class="row g-3 mb-4" id="selectors-row">
+           <div class="row g-3 mb-4" id="selectors-row">
     <div class="col-md" id="year-col">
         <label for="year" class="form-label">اختر الفرقة:</label>
         <select id="year" class="form-select" onchange="loadSubjects()">
@@ -30,18 +46,18 @@
         </select>
     </div>
 
-    <div class="col-md" id="term-col">
-        <label for="term" class="form-label">اختر الترم:</label>
-        <select id="term" class="form-select" onchange="loadSubjects()">
-            <option value="2">الترم الثاني</option>
-        </select>
-    </div>
-
     <div class="col-md d-none" id="section-wrapper">
         <label for="section" class="form-label">اختر القسم:</label>
         <select id="section" class="form-select" onchange="loadSubjects()">
             <option value="محاسبة">محاسبة</option>
             <option value="إدارة">إدارة</option>
+        </select>
+    </div>
+
+    <div class="col-md" id="term-col">
+        <label for="term" class="form-label">اختر الترم:</label>
+        <select id="term" class="form-select" onchange="loadSubjects()">
+            <option value="2">الترم الثاني</option>
         </select>
     </div>
 </div>
@@ -58,50 +74,68 @@
         </div>
     </div>
 
+    <footer class="footer py-4 mt-auto border-top border-secondary-subtle">
+        <div
+            class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <div class="social-icons mb-3 mb-md-0">
+                <a href="https://facebook.com/adhamosama.oe" target="_blank">
+                    <i class="ri-facebook-circle-line"></i>
+                </a>
+                <a href="https://instagram.com/adham_oe" target="_blank">
+                    <i class="ri-instagram-line"></i>
+                </a>
+                <a href="https://twitter.com/adham_oe" target="_blank">
+                    <i class="ri-twitter-line"></i>
+                </a>
+            </div>
+            <p class="copyright m-0">
+                Made With Love By Adham Osama © 2025
+            </p>
 
-    <footer class="footer py-4 mt-auto">
+
+            <!-- <footer class="footer py-4 mt-auto">
         <p class="copyright"> Made With Love By Adham Osama © 2025</p>
-    </footer>
+    </footer> -->
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+                crossorigin="anonymous"></script>
 
-    <script>
-        function onYearChange() {
-            const year = document.getElementById("year").value;
-            const sectionWrapper = document.getElementById("section-wrapper");
-            const yearCol = document.getElementById("year-col");
-            const termCol = document.getElementById("term-col");
+            <script>
+                function onYearChange() {
+                    const year = document.getElementById("year").value;
+                    const sectionWrapper = document.getElementById("section-wrapper");
+                    const yearCol = document.getElementById("year-col");
+                    const termCol = document.getElementById("term-col");
 
-            if (year === "4") {
-                // عرض القسم
-                sectionWrapper.classList.remove("d-none");
-                sectionWrapper.classList.add("col-md-4");
+                    if (year === "4") {
+                        // عرض القسم
+                        sectionWrapper.classList.remove("d-none");
+                        sectionWrapper.classList.add("col-md-4");
 
-                // خلي الكل ياخد تلت العرض
-                yearCol.classList.remove("col-md-6");
-                yearCol.classList.add("col-md-4");
+                        // خلي الكل ياخد تلت العرض
+                        yearCol.classList.remove("col-md-6");
+                        yearCol.classList.add("col-md-4");
 
-                termCol.classList.remove("col-md-6");
-                termCol.classList.add("col-md-4");
-            } else {
-                // إخفاء القسم
-                sectionWrapper.classList.add("d-none");
-                sectionWrapper.classList.remove("col-md-4");
+                        termCol.classList.remove("col-md-6");
+                        termCol.classList.add("col-md-4");
+                    } else {
+                        // إخفاء القسم
+                        sectionWrapper.classList.add("d-none");
+                        sectionWrapper.classList.remove("col-md-4");
 
-                // خلي الاثنين ياخدوا نص العرض
-                yearCol.classList.remove("col-md-4");
-                yearCol.classList.add("col-md-6");
+                        // خلي الاثنين ياخدوا نص العرض
+                        yearCol.classList.remove("col-md-4");
+                        yearCol.classList.add("col-md-6");
 
-                termCol.classList.remove("col-md-4");
-                termCol.classList.add("col-md-6");
-            }
+                        termCol.classList.remove("col-md-4");
+                        termCol.classList.add("col-md-6");
+                    }
 
-            loadSubjects(); // حدث البيانات حسب الاختيار
-        }
-    </script>
+                    loadSubjects(); // حدث البيانات حسب الاختيار
+                }
+            </script>
 
 </body>
 
